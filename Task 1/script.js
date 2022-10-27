@@ -8,3 +8,29 @@ pamatyti jo pateikto svorio kovertavimą į:
 Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
+
+document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const inputKg = Number(document.getElementById("search").value);
+
+
+    const weightInLb = inputKg * 2.2046;
+    const weightInG = inputKg / 0.001;
+    const weightInOz = inputKg * 35.274;
+
+    const output = document.getElementById("output");
+    const conversionResult = document.createElement("p");
+    conversionResult.innerHTML = `${inputKg}kg yra lygu:<br><br>${weightInLb} svarų<br>${weightInG} gramų<br>${weightInOz} uncijų`;
+    conversionResult.style.margin = "0 auto";
+    conversionResult.style.color = "green";
+    conversionResult.style.textAlign = "center";
+    conversionResult.style.fontSize = "2rem";
+    output.append(conversionResult);
+
+    setTimeout(() => {
+        conversionResult.remove();
+        }, 4000);
+  });
+
+
