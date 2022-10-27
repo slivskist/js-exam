@@ -10,3 +10,11 @@ const audi = {
   year: 2005,
   color: 'white',
 };
+
+const showObjectKeys = (object) => {
+  console.log(Object.keys(object));
+}
+
+showObjectKeys(audi);
+
+// Atrodo per daug paprasta užduotis. Tikiuosi, kad teisingai supratau.
